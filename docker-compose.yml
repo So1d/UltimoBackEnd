@@ -7,7 +7,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./src:/var/www/html # Sincroniza a pasta local src com o diretório do Apache
+      - ./src:/var/www/html # Sincroniza a pasta src com o diretório do Apache
     depends_on:
       - mysql
 
@@ -21,7 +21,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: pipocaqueimada
     ports:
-      - "3306:3306" # Mapeia a porta do MySQL
+      - "3306:3306"
 
   phpmyadmin:
     image: phpmyadmin:latest
@@ -32,7 +32,7 @@ services:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: root
     ports:
-      - "8081:80" # Mapeia a porta do phpMyAdmin para 8081
+      - "8081:80" 
 
 #lembrar:
 #docker-compose up -d - ReInicia o conteineres; 
